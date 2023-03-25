@@ -5,6 +5,20 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Cześć</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Cześć @Model.Name</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label class="control-label" asp-for="FizzBuzz.Number"></label>
+            <input class="form-control" asp-for="FizzBuzz.Number"/><br/>
+            <button type="submit" class="btn btn-primary">Zatwierdź</button><br/>
+        </div>
+    </form><br/>
+
+    @if (Model.FizzBuzz != null)
+    {
+        <div class="alert alert-success">
+            <p>@Model.FizzBuzz.Result</p>
+        </div>
+    }
 </div>
+
